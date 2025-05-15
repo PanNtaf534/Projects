@@ -1,7 +1,6 @@
 import tkinter as tk
 
 def calculate_price():
-    #coffee = coffee_type.get()  (ws enallaktiko tropo anti gia katefthian mesa stin if)
     total = 0
     if coffee_type.get() == "Espresso":
         total = 2.0
