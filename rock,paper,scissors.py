@@ -1,5 +1,3 @@
-from numbers import Number
-
 rock = '''
     _______
 ---'   ____)
@@ -30,22 +28,23 @@ scissors = '''
 import random
 
 choice_list = [rock, paper, scissors]
-user = int(input("What do you choose?Type 0 for Rock, type 1 for Paper or 2 for scissors.\n"))
+player = int(input("What do you choose?Type 0 for Rock, type 1 for Paper or 2 for scissors.\n"))
+if player not in [0, 1, 2]: exit("Invalid input. Please enter 0, 1, or 2.")
 opponent_index = (random.randint(0,2))
 
 print("Player chose:")
-print(choice_list[user])
+print(choice_list[player])
 print("Opponent chose:")
 print(choice_list[opponent_index])
 
 
-if user == 0 and opponent_index == 0:
+if player == 0 and opponent_index == 0:
     print("It`s A Draw!")
-elif user == 0 and opponent_index == 2:
-    print("User Wins!")
-elif user == 1 and opponent_index == 0:
-    print("User Wins!")
-elif user == 2 and opponent_index == 1:
+elif player == 0 and opponent_index == 2:
+    print("Player Wins!")
+elif player == 1 and opponent_index == 0:
+    print("Player Wins!")
+elif player == 2 and opponent_index == 1:
     print("Player Wins!")
 else:
     print("Opponent Wins!")
