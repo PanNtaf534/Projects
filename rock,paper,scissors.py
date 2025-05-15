@@ -1,19 +1,51 @@
+from numbers import Number
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
 import random
 
-def play():
-    user = input("What's your choice? 'r' for Rock, 'p' for paper, 's' for scissors ")
-    computer = random.choice(['r','p','s'])
+choice_list = [rock, paper, scissors]
+user = int(input("What do you choose?Type 0 for Rock, type 1 for Paper or 2 for scissors.\n"))
+opponent_index = (random.randint(0,2))
 
-    if user == computer:
-        return("It's a tie")
-    
-    if is_win(user,computer):
-        return("Congratulations!You won!")
-    if is_win(computer,user):
-        return("Sorry.You lost.")
+print("Player chose:")
+print(choice_list[user])
+print("Opponent chose:")
+print(choice_list[opponent_index])
 
-def is_win(player,opponent):
-    if(player=='r'and opponent=='s')or(player=='s' and opponent=='p')or(player=='p' and opponent=='r'):
-        return True
-    
-print(play())
+
+if user == 0 and opponent_index == 0:
+    print("It`s A Draw!")
+elif user == 0 and opponent_index == 2:
+    print("User Wins!")
+elif user == 1 and opponent_index == 0:
+    print("User Wins!")
+elif user == 2 and opponent_index == 1:
+    print("Player Wins!")
+else:
+    print("Opponent Wins!")
